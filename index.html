@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>What can this be</title>
 
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300&family=Raleway">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300&family=Raleway:500">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
-
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -52,9 +52,18 @@
                 <div class="label label-warning"> ?</div>
                 <div class="label label-success">NL</div>
             </div>
-            <div class="movieInformation" style="display: none"></div>
+            <div class="movieInformation" style="display: none"><div class="relativeContainer"><div class="confirmOrCancel"><i class="fa fa-times right"></i><i class="fa fa-check right"></i> </div></div></div>
         </li>
-        <li class="movie">Movie 2</li>
+        <li class="movie"><img class="thumbs" src="images/thumb-example.jpg"><span class="movieText">Movie 2</span>
+
+            <div class="editright" style="display: none;"><i class="fa fa-pencil toolsAlign"></i><i class="fa fa-repeat toolsAlign"></i></div>
+            <div class="info">
+                <div class="label label-danger">EN</div>
+                <div class="label label-warning"> ?</div>
+                <div class="label label-success">NL</div>
+            </div>
+            <div class="movieInformation" style="display: none">BLABLABLABLA</div>
+        </li>
         <li class="movie">Movie 3</li>
         <li class="movie">Movie 4</li>
         <li class="movie">Movie 5</li>
@@ -68,6 +77,9 @@
     </div>
 </div>
 <script>
+    /*
+    Ripple
+     */
     $("#menu li").click(function (e) {
         if ($(this).hasClass('slider')) {
             return;

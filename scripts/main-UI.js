@@ -7,32 +7,20 @@
  $(".contentWrapper").height($(document).height());*/
 
 $(".movie").hover(
+//TODO: Hover only if not focused
     function () {
-        $(this).find(".editright").show("fast");
-        $(this).find(".info").hide("fast");
+        if($(this).hasClass("chosenMovie") == false) {
+            $(this).find(".editright").show("fast");
+            $(this).find(".info").hide("fast");
+        }
     }, function () {
         $(this).find(".editright").hide("fast");
         $(this).find(".info").show("fast");
     }
+
 );
-/*$( document ).ready(function() {
-    $(".menuSelected").hide();
-});*/
 
-//TODO: testen slider
 $(".menuChooser").click(function(){
-    /* var $target = $($(this).attr('target')),
-     $other = $target.siblings('.active');
-     if (!$target.hasClass('active')) {
-     $other.each(function (index, self) {
-     var $this = $(this);
-     $this.removeClass('active').animate({height: 'toggle'}, 200);
-     });
-     $target.addClass('active').show().css({
-     left: -($target.width())
-     }).animate({height: 'toggle'}, 200);
-     }*/
-
     var $target = $(this).attr('target');
     var activeTab = $(".active");
     var activetabid = activeTab.attr('id');
@@ -55,8 +43,29 @@ $(".menuChooser").click(function(){
 });
 //TODO: info
 $(".movie .fa-pencil").click(function(){
-    alert("clicked");
-    $(this).closest( ".movieInformation").show();
-
+    var movie = $(this).closest( ".movie");
+    if(movie.hasClass("chosenMovie") == false){
+        collapseOldChosenMovie();
+        movie.find(".editright").hide("fast");
+        movie.find(".info").show("fast");
+        //$(this).closest( ".movieInformation").show();
+        movie.addClass("chosenMovie",750,"easeInOutQuint");
+        movie.find(".thumbs").addClass("focussedThumb", 750, "easeInOutQuint");
+        movie.find(".movieText").animate({"margin-left": "150px"},750, "easeInOutQuint");
+        movie.find(".movieInformation").show(750, "easeInOutQuint");
+    }
 });
+$(".confirmOrCancel .fa-times").click(function () {
+    collapseOldChosenMovie();
+});
+
+function collapseOldChosenMovie(){
+   var movie = $(".movie.chosenMovie");
+    movie.removeClass("chosenMovie",750,"easeInOutQuint");
+    movie.find(".thumbs").removeClass("focussedThumb", 750, "easeInOutQuint");
+    movie.find(".movieText").animate({"margin-left": "25px"},750, "easeInOutQuint");
+    movie.find(".movieInformation").hide(750, "easeInOutQuint");
+
+
+}
 

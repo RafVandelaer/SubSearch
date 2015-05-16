@@ -17,8 +17,14 @@ html, body {
     font-size: 16px;
     padding-left: 0px;
     padding-right: 5px;
+    position: relative;
 }
+
 .movie{
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     color: #cacaca;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -40,8 +46,8 @@ html, body {
     margin-left: 5px;
 }
 .contentWrapper{
-    width:800px;
-    margin: 50px auto 0;
+    width:50%;
+    margin: 40px auto 0;
     overflow-x: hidden;
    /* position: relative;*/
 }
@@ -63,7 +69,7 @@ html, body {
 }
 
 .thumbs{
-  margin-top: -4px;
+  margin-top: -5px;
 }
 .movieText{
   margin-left: 25px;
@@ -83,7 +89,7 @@ img {
   -webkit-background-size: auto;
   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-transition-delay: 0s;
-  -webkit-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.75s;
   -webkit-transition-property: all;
   -webkit-transition-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
   background-attachment: scroll;
@@ -97,20 +103,57 @@ img {
   display: block;
   font-family: OpenSans, 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
   font-size: 12px;
-  height: 31px;
+  height: 32px;
 
   line-height: 0px;
   overflow-x: hidden;
   overflow-y: hidden;
   position: absolute;
   transition-delay: 0s;
-  transition-duration: 0.6s;
+  transition-duration: 0.75s;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
   width: 20px;
 }
-.movieInformation{
-    height: 100px;
+
+.focussedThumb{
+    height: 200px;
+    width: 133px;
+    margin-top: -5px;
+}
+.movieInformation {
+    height: 165px;
+    width: 78%;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    margin-right: 7px;
+
+}
+.relativeContainer{
+    position: relative;
+    height: 100%;
+}
+.confirmOrCancel{
+    position: absolute;
+    bottom: 7px;
+     width: 100%;;
+}
+.right{
+    float:right;
+    margin-right: 5px;
+}
+.fa-check{
+    color:rgba(19, 187, 28, 0.65);
+}
+.fa-check:hover{
+    color: #13bb1c;
+}
+.fa-times{
+    color:rgba(244, 8, 15, 0.48);
+}
+.fa-times:hover{
+    color: #c11217;
 }
 
 
@@ -227,6 +270,7 @@ input[type="search"]::-webkit-search-decoration {
 
 .container {
     width: 100%;
+    margin-bottom: 30px;
     /*left: 50%;
    margin: -22px 0 0 -141px;
     position: absolute;
@@ -238,9 +282,15 @@ input[type="search"]::-webkit-search-decoration {
 #search {
     background: #1f3348;
     border-radius: 3px;
-    display: inline-block;
+   /* display: inline-block;*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 279px;
     padding: 7px;
-    margin-left: 30%;
+}
+.chosenMovie{
+    height: 200px;
+    background-color: #4f6379;
 }
 
 #search input {
@@ -249,7 +299,7 @@ input[type="search"]::-webkit-search-decoration {
 
 #search input[type="search"],
 #search input[type="submit"] {
-    border-radius: 3px;
+    /*border-radius: 3px;*/
     font-size: 12px;
 }
 
