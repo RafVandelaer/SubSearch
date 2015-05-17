@@ -7,7 +7,6 @@
  $(".contentWrapper").height($(document).height());*/
 
 $(".movie").hover(
-//TODO: Hover only if not focused
     function () {
         if($(this).hasClass("chosenMovie") == false) {
             $(this).find(".editright").show("fast");
@@ -19,6 +18,7 @@ $(".movie").hover(
     }
 
 );
+
 
 $(".menuChooser").click(function(){
     var $target = $(this).attr('target');
@@ -41,7 +41,6 @@ $(".menuChooser").click(function(){
     }
 
 });
-//TODO: info
 $(".movie .fa-pencil").click(function(){
     var movie = $(this).closest( ".movie");
     if(movie.hasClass("chosenMovie") == false){
@@ -52,7 +51,10 @@ $(".movie .fa-pencil").click(function(){
         movie.addClass("chosenMovie",750,"easeInOutQuint");
         movie.find(".thumbs").addClass("focussedThumb", 750, "easeInOutQuint");
         movie.find(".movieText").animate({"margin-left": "150px"},750, "easeInOutQuint");
-        movie.find(".movieInformation").show(750, "easeInOutQuint");
+        movie.find(".movieInformation").show(750, "easeInOutQuint", function(){
+            fitInfo();
+        });
+
     }
 });
 $(".confirmOrCancel .fa-times").click(function () {
@@ -65,7 +67,8 @@ function collapseOldChosenMovie(){
     movie.find(".thumbs").removeClass("focussedThumb", 750, "easeInOutQuint");
     movie.find(".movieText").animate({"margin-left": "25px"},750, "easeInOutQuint");
     movie.find(".movieInformation").hide(750, "easeInOutQuint");
-
-
+}
+function fitInfo(){
+    $(".movieInformation").width(($(".chosenMovie").width() - $(".focussedThumb").width()) -7);
 }
 

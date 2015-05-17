@@ -6,18 +6,28 @@
 
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300&family=Raleway:500">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- JQuery -->
     <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS of Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap-custom-combobox/bootstrap-combobox.css">
+    <script src="plugins/bootstrap-custom-combobox/bootstrap-combobox.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/jquery-UI.css">
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body class="wrapper">
 <ul id="menu">
-    <li class="menuChooser" target="#movieList">Movies <div class="menuSelected"></div></li>
-    <li class="menuChooser" target="#settingsMenu">Settings <div class="menuSelected" style="display: none"></div></li>
+    <li class="menuChooser" target="#movieList">Movies
+        <div class="menuSelected"></div>
+    </li>
+    <li class="menuChooser" target="#settingsMenu">Settings
+        <div class="menuSelected" style="display: none"></div>
+    </li>
     <li class="menuChooser">Tab Three</li>
     <li></li>
 </ul>
@@ -31,54 +41,105 @@
 
                     <fieldset class="clearfix">
 
-                        <input type="search" name="search" value="What are you looking for?" onBlur="if(this.value=='')this.value='What are you looking for?'" onFocus="if(this.value=='What are you looking for?')this.value='' "> <!-- JS because of IE support; better: placeholder="What are you looking for?" -->
+                        <input type="search" name="search" value="What are you looking for?"
+                               onBlur="if(this.value=='')this.value='What are you looking for?'"
+                               onFocus="if(this.value=='What are you looking for?')this.value='' ">
+                        <!-- JS because of IE support; better: placeholder="What are you looking for?" -->
                         <input type="submit" value="Search" class="button">
 
                     </fieldset>
 
                 </form>
 
-            </div> <!-- end search -->
-
-        </div> <!-- end container -->
-    <ul id="sublist">
-        <!--  <li class="movie"><img class="img-responsive" src="images/thumb-example.jpg">Movie 1 <div class="editright" style="display: none;"><i class="fa fa-pencil"></i></div><div class="info label label-danger">EN</div> <div class="info label label-success">NL</div></li>
--->
-        <li class="movie"><img class="thumbs" src="images/thumb-example.jpg"><span class="movieText">Movie 1</span>
-
-            <div class="editright" style="display: none;"><i class="fa fa-pencil toolsAlign"></i><i class="fa fa-repeat toolsAlign"></i></div>
-            <div class="info">
-                <div class="label label-danger">EN</div>
-                <div class="label label-warning"> ?</div>
-                <div class="label label-success">NL</div>
             </div>
-            <div class="movieInformation" style="display: none"><div class="relativeContainer"><div class="confirmOrCancel"><i class="fa fa-times right"></i><i class="fa fa-check right"></i> </div></div></div>
-        </li>
-        <li class="movie"><img class="thumbs" src="images/thumb-example.jpg"><span class="movieText">Movie 2</span>
+            <!-- end search -->
 
-            <div class="editright" style="display: none;"><i class="fa fa-pencil toolsAlign"></i><i class="fa fa-repeat toolsAlign"></i></div>
-            <div class="info">
-                <div class="label label-danger">EN</div>
-                <div class="label label-warning"> ?</div>
-                <div class="label label-success">NL</div>
-            </div>
-            <div class="movieInformation" style="display: none">BLABLABLABLA</div>
-        </li>
-        <li class="movie">Movie 3</li>
-        <li class="movie">Movie 4</li>
-        <li class="movie">Movie 5</li>
-        <li class="movie">Movie 6</li>
-        <li class="movie">Movie 7</li>
-        <li class="movie">Movie 8</li>
-    </ul>
         </div>
+        <!-- end container -->
+        <ul id="sublist">
+            <!--  <li class="movie"><img class="img-responsive" src="images/thumb-example.jpg">Movie 1 <div class="editright" style="display: none;"><i class="fa fa-pencil"></i></div><div class="info label label-danger">EN</div> <div class="info label label-success">NL</div></li>
+    -->
+            <li class="movie"><img class="thumbs" src="images/thumb-example.jpg"><span class="movieText">Movie 1</span>
+
+                <div class="editright" style="display: none;"><i class="fa fa-pencil toolsAlign"></i><i
+                        class="fa fa-repeat toolsAlign"></i></div>
+                <div class="info">
+                    <div class="label label-danger">EN</div>
+                    <div class="label label-warning"> ?</div>
+                    <div class="label label-success">NL</div>
+                </div>
+                <div class="movieInformation" style="display: none">
+                    <div class="relativeContainer">
+                        <span>
+                            <label class="robotoFont"> Select a new subtitle language</label>
+                        <select class="Form right" name="size" >
+                            <option value=""  selected></option>
+                            <option value="s">Small (S)</option>
+                            <option value="m">Medium (M)</option>
+                            <option value="l">Large (L)</option>
+                            <option value="xl">Extra large (XL)</option>
+                        </select>
+                            </span>
+                        <hr class="hr-style">
+                        <div class="confirmOrCancel"><i class="fa fa-times right"></i><i class="fa fa-check right"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="movie"><img class="thumbs" src="images/thumb-example.jpg"><span class="movieText">Movie 2</span>
+
+                <div class="editright" style="display: none;"><i class="fa fa-pencil toolsAlign"></i><i
+                        class="fa fa-repeat toolsAlign"></i></div>
+                <div class="info">
+                    <div class="label label-danger">EN</div>
+                    <div class="label label-warning"> ?</div>
+                    <div class="label label-success">NL</div>
+                </div>
+                <div class="movieInformation" style="display: none">
+                    <select class="Form" name="size" >
+                        <option value="" disabled selected>Select your option</option>
+                        <option value="s">Small (S)</option>
+                        <option value="m">Medium (M)</option>
+                        <option value="l">Large (L)</option>
+                        <option value="xl">Extra large (XL)</option>
+                    </select>
+                    <div class="relativeContainer">
+                        <div class="confirmOrCancel"><i class="fa fa-times right"></i><i class="fa fa-check right"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="movie">Movie 3</li>
+            <li class="movie">Movie 4</li>
+            <li class="movie">Movie 5</li>
+            <li class="movie">Movie 6</li>
+            <li class="movie">Movie 7</li>
+            <li class="movie">Movie 8</li>
+
+            <li class="movie">Movie 3</li>
+            <li class="movie">Movie 4</li>
+            <li class="movie">Movie 5</li>
+            <li class="movie">Movie 6</li>
+            <li class="movie">Movie 7</li>
+            <li class="movie">Movie 8</li>
+        </ul>
+    </div>
     <div id="settingsMenu" class="switcherpanels" style="display: none;">
         NEWLIST BABY
+
+        <select class="Form" name="size">
+            <option value="" selected>Choose a size</option>
+            <option value="s">Small (S)</option>
+            <option value="m">Medium (M)</option>
+            <option value="l">Large (L)</option>
+            <option value="xl">Extra large (XL)</option>
+        </select>
+
     </div>
 </div>
 <script>
     /*
-    Ripple
+     Ripple
      */
     $("#menu li").click(function (e) {
         if ($(this).hasClass('slider')) {
@@ -117,7 +178,30 @@
 
     });
 
+    $( window ).resize(function() {
+       fitInfo();
+    });
+
+    $(".ui-combobox").click(function () {
+        alert("clicked");
+       $(this).text().empty();
+    });
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.Form').combobox({
+            create: function (evt, ui) {
+                // console.log(ui);
+                $('.comboboxButton').html('<i class="fa fa-search"></i>');
+            }
+        });
+        $(".ui-combobox-input").removeAttr("style");
+
+    });
+
 </script>
 <script src="scripts/main-UI.js"></script>
+
 </body>
 </html>

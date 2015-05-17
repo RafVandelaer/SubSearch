@@ -49,6 +49,7 @@ html, body {
     width:50%;
     margin: 40px auto 0;
     overflow-x: hidden;
+    height: auto;
    /* position: relative;*/
 }
 .switcherpanels {
@@ -74,12 +75,81 @@ html, body {
 .movieText{
   margin-left: 25px;
 }
+.ui-combobox-input{
+    border: 0px;
+    border-radius: 0px;
+    font-family: roboto, sans-serif;
+    font-size: 12px;
+}
+.ui-menu .ui-menu-item {
+    font-family: roboto;
+    font-size: 12px;
+}
+.robotoFont{
+    font-family: roboto;
+    font-size: 13px;
+    font-weight: 300;
+}
+hr.hr-style {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(31, 51, 72, 0.75), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(31, 51, 72, 0.75), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(31, 51, 72, 0.75), rgba(0,0,0,0));
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(31, 51, 72, 0.75), rgba(0,0,0,0));
+}
+
 .menuSelected{
     background-color: #19b79a;
     height: 5px;
     width: 100%;
     position:absolute;
     bottom:0;
+}
+.comboboxButton{
+    position: absolute;
+    width: 1.8em !important;
+    margin: 0;
+    margin-left: -1px;
+    top: 0;
+    bottom: 0;
+    margin-top: 1px;
+    height: 100%;
+    border: 0px;
+    background-color: rgb(27, 186, 154);
+}
+.comboboxButton .fa-search{
+    color: #ebebeb;
+}
+
+
+/*
+UI override
+
+.ui-combobox-button{
+    border: 0px;
+    border-radius: 0px;
+    margin: 1px;
+}
+.ui-combobox-button:focus {
+    box-sizing: border-box;
+    color: rgb(51, 51, 51);
+    border: 0px;
+
+    display: inline-block;
+    font-family: roboto, sans-serif;
+    font-size: 14px;
+   height: 29px;
+    line-height: 20px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 25px;
+    margin-top: 0px;
+    position: relative;
+    /*width: 211.15625px; /* removes extra width in IE
+}*/
+.ui-widget .ui-widget-content .ui-corner-left{
+    width: 100px;
 }
 
 
@@ -128,6 +198,7 @@ img {
     bottom: 0;
     position: absolute;
     margin-right: 7px;
+    padding-left: 7px;
 
 }
 .relativeContainer{
