@@ -16,7 +16,10 @@
     <link rel="stylesheet" type="text/css" href="plugins/bootstrap-custom-combobox/bootstrap-combobox.css">
     <script src="plugins/bootstrap-custom-combobox/bootstrap-combobox.js"></script>
 
+    <script src="plugins/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/jquery-UI.css">
+    <link rel="stylesheet" href="plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" />
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
@@ -35,15 +38,15 @@
     <div id="movieList" class="switcherpanels active">
         <div class="container">
 
-            <div id="search">
+            <div class="search">
 
                 <form action="javascript:void(0);" method="GET">
 
                     <fieldset class="clearfix">
 
-                        <input type="search" name="search" value="What are you looking for?"
-                               onBlur="if(this.value=='')this.value='What are you looking for?'"
-                               onFocus="if(this.value=='What are you looking for?')this.value='' ">
+                        <input type="search" name="search" value="What movie are you looking for?"
+                               onBlur="if(this.value=='')this.value='What movie are you looking for?'"
+                               onFocus="if(this.value=='What movie are you looking for?')this.value='' ">
                         <!-- JS because of IE support; better: placeholder="What are you looking for?" -->
                         <input type="submit" value="Search" class="button">
 
@@ -81,12 +84,24 @@
                         </select>
                             </span>
                         <hr class="hr-style">
+                        <p >
+                            <label class="robotoFont">Directory :</label>
+                            <label class="right robotoFont italic-font"> /volume2/Movies/The Dark Knight</label>
+                        </p>
+                        <p >
+                            <label class="robotoFont">Filename :</label>
+                            <label class="right robotoFont italic-font"> The.Dark.Knight[2012].TestRip.mkv</label>
+                        </p>
+                        <p class="robotoFont">
+                            <label class="robotoFont">Size :</label>
+                            <label class="right robotoFont italic-font">4.7GB</label>
+                        </p>
                         <div class="confirmOrCancel"><i class="fa fa-times right"></i><i class="fa fa-check right"></i>
                         </div>
                     </div>
                 </div>
             </li>
-            <li class="movie"><img class="thumbs" src="images/thumb-example.jpg"><span class="movieText">Movie 2</span>
+            <li class="movie"><img class="thumbs" src="images/thumb-example.jpg"><span class="movieText">Movie 2 (Manual Sub Search)</span>
 
                 <div class="editright" style="display: none;"><i class="fa fa-pencil toolsAlign"></i><i
                         class="fa fa-repeat toolsAlign"></i></div>
@@ -96,20 +111,61 @@
                     <div class="label label-success">NL</div>
                 </div>
                 <div class="movieInformation" style="display: none">
-                    <select class="Form" name="size" >
-                        <option value="" disabled selected>Select your option</option>
-                        <option value="s">Small (S)</option>
-                        <option value="m">Medium (M)</option>
-                        <option value="l">Large (L)</option>
-                        <option value="xl">Extra large (XL)</option>
-                    </select>
                     <div class="relativeContainer">
-                        <div class="confirmOrCancel"><i class="fa fa-times right"></i><i class="fa fa-check right"></i>
+                        <div class="search" id="subSearch">
+
+                            <form action="javascript:void(0);" method="GET">
+
+                                <fieldset class="clearfix">
+
+                                    <input type="search" name="search" value="Find a ripper!"
+                                           onBlur="if(this.value=='')this.value='Find a ripper!'"
+                                           onFocus="if(this.value=='Find a ripper!')this.value='' ">
+                                    <!-- JS because of IE support; better: placeholder="What are you looking for?" -->
+                                    <input type="submit" value="Search" class="button">
+
+                                </fieldset>
+
+                            </form>
+
                         </div>
+                        <hr class="hr-style">
+                        <div class="subWrapper">
+                        <ul id="subtitleList">
+                            <li>subtitle one</li>
+                            <li class="hasRipper">subtitle two</li>
+                            <li>subtitle three</li>
+                            <li>subtitle four</li>
+                            <li>subtitle five</li>
+                            <li>subtitle six</li>
+                            <li>subtitle seven</li>
+                            <li>subtitle eight</li>
+                        </ul>
+                            </div>
+
                     </div>
                 </div>
             </li>
-            <li class="movie">Movie 3</li>
+            <li class="movie"><img class="thumbs" src="images/thumb-example.jpg"><span class="movieText">Movie 3 (Download sub)</span>
+
+                <div class="editright" style="display: none;"><i class="fa fa-pencil toolsAlign"></i><i
+                        class="fa fa-repeat toolsAlign"></i></div>
+                <div class="info">
+                    <div class="label label-danger">EN</div>
+                    <div class="label label-warning"> ?</div>
+                    <div class="label label-success">NL</div>
+                </div>
+                <div class="movieInformation" style="display: none">
+                    <div class="relativeContainer">
+                            <div class="inlineButtons" id="startDownload">
+                                START
+                            </div>
+                            <div class="inlineButtons" id="cancelDownload">
+                                CANCEL
+                            </div>
+                    </div>
+                </div>
+            </li>
             <li class="movie">Movie 4</li>
             <li class="movie">Movie 5</li>
             <li class="movie">Movie 6</li>
@@ -197,11 +253,20 @@
             }
         });
         $(".ui-combobox-input").removeAttr("style");
-
     });
 
 </script>
+
 <script src="scripts/main-UI.js"></script>
 
+<script>
+        $(window).load(function(){
+            $(".subWrapper").mCustomScrollbar({
+                theme:"dark-2",
+                setHeight: 100
+
+            });
+        });
+</script>
 </body>
 </html>
