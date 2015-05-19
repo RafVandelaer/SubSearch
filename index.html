@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>What can this be</title>
 
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300&family=Raleway:500">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300|Raleway:500|Raleway:700">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- JQuery -->
     <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
@@ -32,7 +32,6 @@
         <div class="menuSelected" style="display: none"></div>
     </li>
     <li class="menuChooser">Tab Three</li>
-    <li></li>
 </ul>
 <div class="contentWrapper">
     <div id="movieList" class="switcherpanels active">
@@ -74,7 +73,7 @@
                 <div class="movieInformation" style="display: none">
                     <div class="relativeContainer">
                         <span>
-                            <label class="robotoFont"> Select a new subtitle language</label>
+                            <label class="robotoFont"> New subtitle language</label>
                         <select class="Form right" name="size" >
                             <option value=""  selected></option>
                             <option value="s">Small (S)</option>
@@ -236,12 +235,27 @@
 
     $( window ).resize(function() {
        fitInfo();
+        movieListfit();
     });
 
     $(".ui-combobox").click(function () {
         alert("clicked");
        $(this).text().empty();
     });
+    function movieListfit(){
+        if( 800 <  window.innerWidth && window.innerWidth < 1024){
+            $(".contentWrapper").css("width","70%");
+        }
+        else if ( 550 <  window.innerWidth &&  window.innerWidth < 800){
+            $(".contentWrapper").css("width","90%");
+        }
+        else if( window.innerWidth < 550){
+            $(".contentWrapper").css("width","100%");
+        }
+        else{
+            $(".contentWrapper").css("width","50%");
+        }
+    }
 
 </script>
 <script type="text/javascript">
@@ -261,6 +275,7 @@
 
 <script>
         $(window).load(function(){
+            movieListfit();
             $(".subWrapper").mCustomScrollbar({
                 theme:"dark-2",
                 setHeight: 100
