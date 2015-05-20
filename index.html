@@ -180,15 +180,35 @@
         </ul>
     </div>
     <div id="settingsMenu" class="switcherpanels" style="display: none;">
-        NEWLIST BABY
-
-        <select class="Form" name="size">
-            <option value="" selected>Choose a size</option>
-            <option value="s">Small (S)</option>
-            <option value="m">Medium (M)</option>
-            <option value="l">Large (L)</option>
-            <option value="xl">Extra large (XL)</option>
-        </select>
+        <form id="settingsForm">
+            <p>
+                <label>Movie Directory</label>
+                <i class="fa fa-minus" style="float: right"></i>
+                <input class="right settingsInput" name="movieDirectory" placeholder="eg: /volume2/Movies/ On enter = check" value="">
+            </p>
+            <p>
+                <label>Subtiltle renamer
+                    (add possibilities)</label>
+                <input class="right settingsInput" name="movieRename" placeholder="eg: [MovieName].[lan]" value="">
+            </p>
+            <br/>
+            <p>
+                <label>Username</label>
+                <input class="right settingsInput" name="username" value="">
+            </p>
+            <br/>
+            <p>
+                <label>Password</label>
+                <input type="password" class="right settingsInput" name="password1" value="">
+                <input type="password" class="right settingsInput" name="password2" value="">
+            </p>
+            <br/>
+            <br/>
+            <p>
+                <label>Background tasks</label>
+                <input type="time" name="time" />
+            </p>
+        </form>
 
     </div>
 </div>

@@ -292,6 +292,23 @@ img {
 .fa-times:hover{
     color: #c11217;
 }
+#settingsForm{
+    color: #dadada;
+    font-family: Raleway;
+    font-size: 14px;
+    /*;font-weight: 300*/
+}
+#settingsForm > p > label{
+    font-weight: 300;
+}
+#settingsForm > p > input{
+    width:60%
+
+}
+.settingsInput{
+    background-color: #4f6379;
+    border: 1px solid #384355;
+}
 
 
 
